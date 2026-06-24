@@ -38,16 +38,7 @@ public class ResultPageController : MonoBehaviour
     private void Start()
     {
         ShowResult();
-
-        if (googleFormUploader == null)
-        {
-            Debug.LogError("尚未綁定 GoogleFormUploader。");
-        }
-        else
-        {
-            googleFormUploader.UploadCurrentResult();
-        }
-
+        UploadResult();
         StartCoroutine(PlayResultFadeIn());
     }
 
@@ -59,10 +50,36 @@ public class ResultPageController : MonoBehaviour
             return;
         }
 
-        userNameLabel.text = Global.Instance.playerName;
-        difficultyText.text = GetDifficultyName(Global.Instance.selectedDifficulty);
-        attemptText.text = Global.Instance.attemptCount.ToString();
-        timeText.text = Global.Instance.GetFormattedElapsedTime();
+        if (userNameLabel != null)
+        {
+            userNameLabel.text = Global.Instance.playerName;
+        }
+
+        if (difficultyText != null)
+        {
+            difficultyText.text = GetDifficultyName(Global.Instance.selectedDifficulty);
+        }
+
+        if (attemptText != null)
+        {
+            attemptText.text = Global.Instance.attemptCount.ToString();
+        }
+
+        if (timeText != null)
+        {
+            timeText.text = Global.Instance.GetFormattedElapsedTime();
+        }
+    }
+
+    private void UploadResult()
+    {
+        if (googleFormUploader == null)
+        {
+            Debug.LogError("尚未綁定 GoogleFormUploader。");
+            return;
+        }
+
+        googleFormUploader.UploadCurrentResult();
     }
 
     private IEnumerator PlayResultFadeIn()
@@ -88,7 +105,6 @@ public class ResultPageController : MonoBehaviour
             elapsedTime += Time.deltaTime;
 
             float progress = Mathf.Clamp01(elapsedTime / fadeDuration);
-
             canvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, progress);
 
             yield return null;
@@ -106,7 +122,6 @@ public class ResultPageController : MonoBehaviour
         }
 
         Global.Instance.ResetGameResult();
-
         SceneManager.LoadScene(LevelSceneName);
     }
 
