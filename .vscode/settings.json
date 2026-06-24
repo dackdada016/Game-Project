@@ -67,5 +67,24 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Game Project.slnx"
+    "dotnet.defaultSolution": "Game Project.slnx",
+    "workbench.colorCustomizations": {
+      "editorBracketHighlight.background1": "#ffd208",
+      "editorBracketHighlight.background2": "#85e2ff",
+      "editorBracketHighlight.background3": "#7bdd63",
+      "editorBracketHighlight.background4": "#9d95e7",
+      "editorBracketHighlight.background5": "#ff9900",
+      "editorBracketHighlight.unexpectedBracket.background": "#f30000",
+      "activityBar.background": "#511C1C",
+      "titleBar.activeBackground": "#712727",
+      "titleBar.activeForeground": "#FEFBFB",
+      "titleBar.inactiveBackground": "#511C1C",
+      "titleBar.inactiveForeground": "#FEFBFB",
+      "statusBar.background": "#511C1C",
+      "statusBar.foreground": "#FEFBFB",
+      "statusBar.debuggingBackground": "#511C1C",
+      "statusBar.debuggingForeground": "#FEFBFB",
+      "statusBar.noFolderBackground": "#511C1C",
+      "statusBar.noFolderForeground": "#FEFBFB"
+    }
 }

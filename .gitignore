@@ -105,3 +105,12 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+/GameProject
+/Assets/Front
+/Assets/Front.meta
+/Assets/kenney_pattern-pack-lines
+/Assets/kenney_pattern-pack-lines.meta
+/Assets/Resources
+/Assets/Resources.meta
+/Assets/Sprites/*
+/Assets/Sprites.meta
